@@ -1,30 +1,18 @@
 # UIView-Animation
 
-@IBOutlet weak var animationView: UIView!
+**@IBOutlet weak var animationView: UIView!**
 
-var viewAnimation: ViewAnimation!
+**var viewAnimation: ViewAnimation!**
 
+*override func viewDidLoad() {*
 
-//...
-
-
-override func viewDidLoad() {
-
-  super.viewDidLoad()
+  *super.viewDidLoad()*
   
         
-  let screenBounds: CGRect = self.view.bounds
+  *let screenBounds: CGRect = self.view.bounds*
   
-        
-  //init view animation
+  **viewAnimation = ViewAnimation(animationStyle: .inFromLeftToRight, view: animationView, bounds: screenBounds)**
   
-  //ViewAnimation(animationStyle: AnimationSyle, view: UIView, bounds: CGRect)
+  **viewAnimation.animateView(duration: 0.5, delay: 0, withSpringAnimation: false)**
   
-  viewAnimation = ViewAnimation(animationStyle: .inFromLeftToRight, view: animationView, bounds: screenBounds)
-  
-  viewAnimation.animateView(duration: 0.5, delay: 0, withSpringAnimation: false)
-  
-}
-
-
-//...
+*}*
