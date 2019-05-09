@@ -1,6 +1,6 @@
 # UIView-Animation
 
-**@IBOutlet weak var animationView: UIView!**
+**@IBOutlet weak var customView: UIView!**
 
 **var viewAnimation: ViewAnimation!**
 
@@ -11,7 +11,7 @@
         
   *let screenBounds: CGRect = self.view.bounds*
   
-  **viewAnimation = ViewAnimation(animationStyle: .inFromLeftToRight, view: animationView, bounds: screenBounds)**
+  **viewAnimation = ViewAnimation(animationStyle: .inFromLeftToRight, view: customView, bounds: screenBounds)**
   
   **viewAnimation.animateView(duration: 0.5, delay: 0, withSpringAnimation: false)**
   
