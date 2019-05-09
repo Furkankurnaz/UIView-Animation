@@ -12,6 +12,7 @@
 		EA7DF3B62284399500D379EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA7DF3B42284399500D379EF /* Main.storyboard */; };
 		EA7DF3B82284399600D379EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7DF3B72284399600D379EF /* Assets.xcassets */; };
 		EA7DF3BB2284399600D379EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA7DF3B92284399600D379EF /* LaunchScreen.storyboard */; };
+		EA7DF3C322843AB200D379EF /* ViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7DF3C222843AB200D379EF /* ViewAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EA7DF3B72284399600D379EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA7DF3BA2284399600D379EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA7DF3BC2284399600D379EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA7DF3C222843AB200D379EF /* ViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				EA7DF3B02284399500D379EF /* AppDelegate.swift */,
 				EA7DF3B22284399500D379EF /* ViewController.swift */,
+				EA7DF3C222843AB200D379EF /* ViewAnimation.swift */,
 				EA7DF3B42284399500D379EF /* Main.storyboard */,
 				EA7DF3B72284399600D379EF /* Assets.xcassets */,
 				EA7DF3B92284399600D379EF /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7DF3C322843AB200D379EF /* ViewAnimation.swift in Sources */,
 				EA7DF3B32284399500D379EF /* ViewController.swift in Sources */,
 				EA7DF3B12284399500D379EF /* AppDelegate.swift in Sources */,
 			);
