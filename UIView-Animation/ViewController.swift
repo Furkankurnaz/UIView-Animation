@@ -19,10 +19,14 @@ class ViewController: UIViewController {
         
         let screenBounds: CGRect = self.view.bounds
         
+        //init view animation
+        //ViewAnimation(animationStyle: AnimationSyle, view: UIView, bounds: CGRect)
         viewAnimation = ViewAnimation(animationStyle: .scaleToZero, view: animationView, bounds: screenBounds)
     }
 
     @IBAction func animateButtonTapped(_ sender: Any) {
+        
+        //apply animation by animateView function
         viewAnimation.animateView(duration: 0.5)
     }
     
