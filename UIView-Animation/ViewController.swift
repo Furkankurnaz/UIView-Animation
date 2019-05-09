@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         let screenBounds: CGRect = self.view.bounds
         
-        viewAnimation = ViewAnimation(animationStyle: .inFromTopToBottom, view: animationView, bounds: screenBounds)
+        viewAnimation = ViewAnimation(animationStyle: .scale(scaleX: 2, scaleY: 2), view: animationView, bounds: screenBounds)
     }
 
     @IBAction func animateButtonTapped(_ sender: Any) {

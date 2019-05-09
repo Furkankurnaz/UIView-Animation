@@ -21,9 +21,9 @@ enum AnimationStyle {
     case outFromTopToBottom
     case outFromBottomToTop
     
-    case scale
+    case scale(scaleX: CGFloat, scaleY: CGFloat)
     
-    case rotate
+    case rotate(angle: CGFloat)
     
     case fadeIn
     case fadeOut
@@ -55,6 +55,12 @@ class ViewAnimation {
         case .scale:
             view.transform = CGAffineTransform(scaleX: 0, y: 0)
             
+        case .fadeIn:
+            view.alpha = 0
+            
+        case .fadeOut:
+            view.alpha = 1
+            
         default: break
         }
     }
@@ -80,37 +86,17 @@ class ViewAnimation {
             case .outFromBottomToTop:
                 self.view.transform = CGAffineTransform(translationX: 0, y: -self.bounds.height)
                 
+            case .scale(let scaleX, let scaleY):
+                self.view.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
+                
+            case .rotate(let angle):
+                self.view.transform = CGAffineTransform(rotationAngle: angle)
+                
             case .fadeIn:
                 self.view.alpha = 1
                 
             case .fadeOut:
                 self.view.alpha = 0
-                
-            default: break
-            }
-        }
-    }
-    
-    func animateView(duration: Double, scaleX: CGFloat, scaleY: CGFloat) {
-        guard scaleX > 0 && scaleY > 0 else { return }
-        
-        UIView.animate(withDuration: duration) {
-            switch self.animationStyle {
-            case .scale:
-                self.view.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
-                
-            default: break
-            }
-        }
-    }
-    
-    func animateView(duration: Double, angle: CGFloat) {
-        UIView.animate(withDuration: duration) {
-            switch self.animationStyle {
-            case .rotate:
-                self.view.transform = CGAffineTransform(rotationAngle: angle)
-                
-            default: break
             }
         }
     }
