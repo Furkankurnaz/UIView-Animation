@@ -27,6 +27,8 @@ enum AnimationStyle {
     
     case fadeIn
     case fadeOut
+    
+    case scaleToZero
 }
 
 class ViewAnimation {
@@ -96,6 +98,10 @@ class ViewAnimation {
                 self.view.alpha = 1
                 
             case .fadeOut:
+                self.view.alpha = 0
+                
+            case .scaleToZero:
+                self.view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
                 self.view.alpha = 0
             }
         }
