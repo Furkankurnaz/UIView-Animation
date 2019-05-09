@@ -22,6 +22,8 @@ override func viewDidLoad() {
   
   viewAnimation = ViewAnimation(animationStyle: .inFromLeftToRight, view: animationView, bounds: screenBounds)
   
+  viewAnimation.animateView(duration: 0.5, delay: 0, withSpringAnimation: false)
+  
 }
 
 
