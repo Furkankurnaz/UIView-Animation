@@ -26,10 +26,22 @@
                                     <constraint firstAttribute="height" constant="100" id="csP-iH-1OK"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAF-Un-xvt">
+                                <rect key="frame" x="151.5" y="611" width="72" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Animate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="13h-hA-5zw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93556851149999998" green="0.23945173619999999" blue="0.18429860470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="HAF-Un-xvt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2WS-S1-6Ln"/>
                             <constraint firstItem="XV8-es-lMT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Gd-PG-cuY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HAF-Un-xvt" secondAttribute="bottom" constant="20" id="BvJ-NN-3CX"/>
                             <constraint firstItem="XV8-es-lMT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hHI-NM-TeA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

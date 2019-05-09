@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-
+    @IBAction func animateButtonTapped(_ sender: Any) {
+        
+    }
+    
 }
 
