@@ -27,9 +27,7 @@ class ViewController: UIViewController {
     @IBAction func animateButtonTapped(_ sender: Any) {
         
         //apply animation by animateView function
-        
-        //viewAnimation.animateView(duration: 0.5)
-        viewAnimation.animateWithSpringEffect(duration: 0.5, delay: 0)
+        viewAnimation.animateView(duration: 0.5, delay: 0, withSpringAnimation: false)
     }
     
 }

@@ -67,22 +67,25 @@ class ViewAnimation {
         }
     }
     
-    func animateView(duration: Double) {
-        UIView.animate(withDuration: duration) {
-            self.applyAnimation()
+    func animateView(duration: Double, delay: Double, withSpringAnimation: Bool) {
+        if withSpringAnimation {
+            UIView.animate(withDuration: duration,
+                           delay: delay,
+                           usingSpringWithDamping: 0.5,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                            self.applyAnimation()
+            },
+                           completion: nil)
+        } else {
+            UIView.animate(withDuration: duration,
+                           delay: delay,
+                           options: .curveEaseInOut,
+                           animations: {
+                            self.applyAnimation()
+            }, completion: nil)
         }
-    }
-    
-    func animateWithSpringEffect(duration: Double, delay: Double) {
-        UIView.animate(withDuration: duration,
-                       delay: delay,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 0,
-                       options: .curveEaseInOut,
-                       animations: {
-            self.applyAnimation()
-        },
-                       completion: nil)
     }
     
     private func applyAnimation() {
