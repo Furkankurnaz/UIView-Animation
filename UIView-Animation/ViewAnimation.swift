@@ -32,9 +32,9 @@ enum AnimationStyle {
 }
 
 class ViewAnimation {
-    var animationStyle: AnimationStyle
-    var view: UIView
-    var bounds: CGRect
+    private var animationStyle: AnimationStyle
+    private var view: UIView
+    private var bounds: CGRect
     
     init(animationStyle: AnimationStyle, view: UIView, bounds: CGRect) {
         self.animationStyle = animationStyle
@@ -69,41 +69,57 @@ class ViewAnimation {
     
     func animateView(duration: Double) {
         UIView.animate(withDuration: duration) {
-            switch self.animationStyle {
-            case .inFromLeftToRight,
-                 .inFromRightToLeft,
-                 .inFromBottomToTop,
-                 .inFromTopToBottom:
-                self.view.transform = .identity
-                
-            case .outFromLeftToRight:
-                self.view.transform = CGAffineTransform(translationX: self.bounds.width, y: 0)
-                
-            case .outFromRightToLeft:
-                self.view.transform = CGAffineTransform(translationX: -self.bounds.width, y: 0)
-                
-            case .outFromTopToBottom:
-                self.view.transform = CGAffineTransform(translationX: 0, y: self.bounds.height)
-                
-            case .outFromBottomToTop:
-                self.view.transform = CGAffineTransform(translationX: 0, y: -self.bounds.height)
-                
-            case .scale(let scaleX, let scaleY):
-                self.view.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
-                
-            case .rotate(let angle):
-                self.view.transform = CGAffineTransform(rotationAngle: angle)
-                
-            case .fadeIn:
-                self.view.alpha = 1
-                
-            case .fadeOut:
-                self.view.alpha = 0
-                
-            case .scaleToZero:
-                self.view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-                self.view.alpha = 0
-            }
+            self.applyAnimation()
+        }
+    }
+    
+    func animateWithSpringEffect(duration: Double, delay: Double) {
+        UIView.animate(withDuration: duration,
+                       delay: delay,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseInOut,
+                       animations: {
+            self.applyAnimation()
+        },
+                       completion: nil)
+    }
+    
+    private func applyAnimation() {
+        switch self.animationStyle {
+        case .inFromLeftToRight,
+             .inFromRightToLeft,
+             .inFromBottomToTop,
+             .inFromTopToBottom:
+            self.view.transform = .identity
+            
+        case .outFromLeftToRight:
+            self.view.transform = CGAffineTransform(translationX: self.bounds.width, y: 0)
+            
+        case .outFromRightToLeft:
+            self.view.transform = CGAffineTransform(translationX: -self.bounds.width, y: 0)
+            
+        case .outFromTopToBottom:
+            self.view.transform = CGAffineTransform(translationX: 0, y: self.bounds.height)
+            
+        case .outFromBottomToTop:
+            self.view.transform = CGAffineTransform(translationX: 0, y: -self.bounds.height)
+            
+        case .scale(let scaleX, let scaleY):
+            self.view.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
+            
+        case .rotate(let angle):
+            self.view.transform = CGAffineTransform(rotationAngle: angle)
+            
+        case .fadeIn:
+            self.view.alpha = 1
+            
+        case .fadeOut:
+            self.view.alpha = 0
+            
+        case .scaleToZero:
+            self.view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            self.view.alpha = 0
         }
     }
     
