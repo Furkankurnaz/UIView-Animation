@@ -21,13 +21,13 @@ class ViewController: UIViewController {
         
         //init view animation
         //ViewAnimation(animationStyle: AnimationSyle, view: UIView, bounds: CGRect)
-        viewAnimation = ViewAnimation(animationStyle: .inFromLeftToRight, view: animationView, bounds: screenBounds)
+        viewAnimation = ViewAnimation(animationStyle: .inFromBottomToTop, view: animationView, bounds: screenBounds)
     }
 
     @IBAction func animateButtonTapped(_ sender: Any) {
         
         //apply animation by animateView function
-        viewAnimation.animateView(duration: 0.5, delay: 0, withSpringAnimation: false)
+        viewAnimation.animateView(duration: 0.5, delay: 0, withSpringAnimation: true)
     }
     
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2019 Furkan Kurnaz. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 enum AnimationStyle {
