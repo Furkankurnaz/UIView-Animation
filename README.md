@@ -17,7 +17,6 @@ override func viewDidLoad() {
   viewAnimation.animateView(duration: 0.5, delay: 0, withSpringAnimation: false)
 }
 ```
-![Alt Text](https://media.giphy.com/media/RIBuCjlo07lCy0WROl/giphy.gif)
 
 # UITableView-Animation
 
