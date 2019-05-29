@@ -27,6 +27,8 @@ enum AnimationStyle {
     case fadeOut
     
     case scaleToZero
+    
+    case shake
 }
 
 class ViewAnimation {
@@ -86,6 +88,14 @@ class ViewAnimation {
         }
     }
     
+    func shakeView() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: .linear)
+        animation.duration = 0.5
+        animation.values = [-15.0, 15.0, -7.5, 7.5, -2.0, 2.0, 0.0 ]
+        self.view.layer.add(animation, forKey: "shake")
+    }
+    
     private func applyAnimation() {
         switch self.animationStyle {
         case .inFromLeftToRight,
@@ -121,6 +131,8 @@ class ViewAnimation {
         case .scaleToZero:
             self.view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
             self.view.alpha = 0
+            
+        default: break
         }
     }
     
