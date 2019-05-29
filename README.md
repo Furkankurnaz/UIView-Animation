@@ -18,6 +18,8 @@ override func viewDidLoad() {
 }
 ```
 
+<img src="https://media.giphy.com/media/RIBuCjlo07lCy0WROl/giphy.gif" width="100" height="400" />
+
 # UITableView-Animation
 
 ```
