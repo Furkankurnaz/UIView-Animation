@@ -1,6 +1,6 @@
 # UIView-Animation
 
-```
+```swift
 @IBOutlet weak var customView: UIView!
 
 var viewAnimation: ViewAnimation!
@@ -20,7 +20,7 @@ override func viewDidLoad() {
 
 # UITableView-Animation
 
-```
+```swift
 var tableViewAnimation: TableViewAnimation!
 
 @IBOutlet weak var tableView: UITableView!
